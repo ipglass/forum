@@ -2,8 +2,11 @@ const express = require("express");
 const router = express.Router();
 const authMiddleware = require("../middleware/auth");
 const {
-    INSERT_USER,
-    LOGIN,
-    GET_JWT_TOKEN
+    REGISTER,
+    LOGIN   
 } = require("../controllers/user");
+
+router.post("/register", REGISTER);
+router.post("/login", LOGIN);
+
 module.exports = router;

@@ -14,15 +14,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use(questionRouter);
+app.use(questionsRouter);
 app.use(answerRouter);
-app.use(userRouter);
+app.use(user);
 
 mongoose
   .connect(process.env.MONGO_CONNECT)
   .then(() => {
     console.log("CONNECTED");
-  })
+  })npm mongoose.startSession
   .catch((err) => {
     console.log("err", err);
   });
